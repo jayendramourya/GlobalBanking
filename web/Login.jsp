@@ -1,0 +1,232 @@
+<html>
+    <head>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                background: linear-gradient(130deg, rgb(72, 174, 242), white);
+                height: 100vh;
+            }
+            .center{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 400px;
+                background: white;
+                border-radius: 10px;
+            }
+            .center h1{
+                text-align: center;
+                padding: 0 0 20px 0;
+                border-bottom: 1px solid silver;
+
+            }
+            .center form{
+                padding: 0 40px;
+                box-sizing: border-box;
+            }
+            .txt,select{
+                position: relative;
+                border-bottom: 2px solid #adcdac;
+                margin: 30px 0;
+            }
+            input{
+                width: 100%;
+                padding: 0 5px;
+                height: 40px;
+                font-size: 16px;
+                border: none;
+                background: none;
+            }
+            label{
+                position: absolute;
+                top: 50%;
+                left: 5px;
+                color: #adcdac;
+                transform: translate(-50%);
+                font-size: 16px;
+                pointer-events: none;
+                transition: .5s;
+            }
+            .txt span::before{
+                content: '';
+                position: absolute;
+                top: 40px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: #3791d3;
+            }
+            .txt input:valid ~ label{
+                top:-5px;
+                color: #273492;
+            }
+            inupt::after{
+                background-color:  black;
+                border-color: red;
+            }
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            :root{
+                --navbar-height: 59px;
+            }
+            #navbar{
+                position: absolute;
+                display: flex;
+                align-items: center;
+                top: 0%;
+            }
+            option,#navbar ul{
+                display: flex;
+            }
+            option,#navbar ul li{
+                list-style: none;
+                font-size: 1.3rem;
+            }
+
+            option,#navbar ul li a{
+                color: rgb(38, 29, 31);
+                display: block;
+                padding: 2px 12px;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+            #navbar ul li a:hover{
+                color:rgb(53, 68, 72);
+                background-color: rgb(144, 242, 243);
+            }
+            #home{
+                display: flex;
+                flex-direction: column;
+                padding: 40px 200px;
+                height: 500px;
+                justify-content: center;
+                align-items: center;
+            }
+            #home::before{
+                content: "";
+                position: absolute;
+                background: linear-gradient(130deg, rgb(72, 174, 242), greenyellow);
+                height: 100%;
+                width: 100%;
+                top: 0px;
+                left: 0px;
+                z-index: -1;
+            }
+            #home h1{
+                color: rgb(32,54,76);
+                text-align: center;
+            }
+            #logo{
+                margin: 15px 23px;
+            }
+            #logo img{
+                height: 100px;
+                margin: 2px 4px;
+            }
+            .dropdown .dropbtn {
+                font-size: 1.3rem;
+                border: none;
+                padding: 2px 12px;
+                border-radius: 5px;
+                background-color: inherit;
+            }
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                background-color: rgb(144, 242, 243);
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                z-index: 1;
+            }
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+            .dropdown:hover .dropdown-content {
+                display: grid;
+            }
+            form{
+                transition-delay: 2s;
+
+            }
+            select {
+  /*background:;*/
+                  background:  rgb(72, 174, 242);
+
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+select:hover {
+  /*background-color: #45a049;*/
+                    background:  rgb(22, 114, 242);
+
+}
+
+        </style>
+    </head>
+    <body>
+    <nav id="navbar">
+        <div id="logo" >
+            <img src="logo3.png" alt="">
+        </div>
+        <ul>
+            <li class="item"><a href="home.jsp">HOME</a></li>
+            <li class="item">
+                <a href="Login.jsp">Login</a>
+            </li>
+            <li class="item"><a href="About.jsp">About us</a></li>
+            <li class="item"><a href="">Contact us</a></li>
+            <li class="item">
+                <div class="dropdown" >
+                    <button class="dropbtn">ADDRESS</button>
+                    <div class="dropdown-content">
+
+                        <a width="800px">Global Square, Patan Bypass, Raigwan, Jabalpur, Madhya Pradesh 482002</a>
+                        <a href="https://goo.gl/maps/FXVxSXDbzxotE1466"> Direction</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="center">
+        <h1>Login</h1>
+        <form action="Check.jsp" method="post">
+            <div class="txt" align="center">
+                <select name="role" class="txt">
+                    <option value="Select">----Select Role----</option>
+                    <option value="admin">ADMIN</option>
+                    <option value="customer">CUSTOMER</option>
+                </select>
+            </div>
+            <div class="txt">
+                <input type="text" name="loginid" placeholder="Login id">
+                <span></span>
+            </div>
+            <div class="txt">
+                <input type="text" name="loginpassword" placeholder="Password" >
+                <span></span>
+            </div>
+            <div align="center">
+                <input type="submit" name="b1" value="Login">
+                <input type="Reset" name="b2" value="Reset">
+            </div>
+            <div class="forpass" align="center">
+                <a href="ForgetPassword.jsp" style="text-decoration: none">Forget Password</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
