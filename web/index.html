@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>HTML Page</title>
+    <title>JSP Page</title>
 </head>
 <body>
-    <script>
-        window.location.href = "home.jsp";
-    </script>
+    <%
+        response.sendRedirect("home.jsp");
+    %>
 </body>
 </html>
